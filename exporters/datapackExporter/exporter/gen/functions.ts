@@ -124,7 +124,11 @@ function generateLocatorPassenger(
 				]).toString()
 			)
 		)
-
+		.set(
+			'Passengers',
+			new deepslate.NbtList()
+		)
+	
 	const locatorEntityNbt = deepslate.NbtTag.fromString(locator.nbt) as NbtCompound
 	if (!locatorEntityNbt.get('Tags')) locatorEntityNbt.set('Tags', new deepslate.NbtList())
 	const tags = locatorEntityNbt.get('Tags') as InstanceType<typeof deepslate.NbtList>
